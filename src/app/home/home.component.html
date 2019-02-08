@@ -1,0 +1,20 @@
+<hr>
+<button (click)="onFetch()">Load Data</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+      <ng-container *ngFor="let row of data">
+        <div class="well">
+          <h4>{{row['name']}}</h4>
+          <label>{{row.phone}}</label>
+          <p>{{row.address['street']}}</p>
+          <p>{{row['address']['geo']['lat']}} , {{row['address']['geo']['lng']}}</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<app-about></app-about>
