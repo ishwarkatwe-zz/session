@@ -1,0 +1,14 @@
+<h1>Parent Com</h1>
+
+
+
+<input [(ngModel)]="name"/>
+
+<p>Amended at parent {{name}}</p>
+
+
+<hr />
+
+<app-child [childName]="name" (output)="newValueEmitted($event)"></app-child>
+
+

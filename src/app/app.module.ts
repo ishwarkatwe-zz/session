@@ -9,13 +9,17 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
+import { InputComponent } from './input/input.component';
+import { ChildComponent } from './input/child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    InputComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
