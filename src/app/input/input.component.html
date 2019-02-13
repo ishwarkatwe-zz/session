@@ -2,13 +2,25 @@
 
 
 
-<input [(ngModel)]="name"/>
+<!--<input [(ngModel)]="name"/>-->
 
-<p>Amended at parent {{name}}</p>
+<!--<p>Amended at parent {{name}}</p>-->
 
 
-<hr />
+<!--****************-->
+<!--{{saying}}-->
+<!--************-->
 
-<app-child [childName]="name" (output)="newValueEmitted($event)"></app-child>
+<!--<hr />-->
+
+<!--<app-child [childName]="name" (output)="newValueEmitted($event)"></app-child>-->
+
+<!--<app-bro></app-bro>-->
+
+
+<button (click)="brodcast()">Send</button>
+
+
+Val at user A {{name}}
 
 

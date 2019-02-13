@@ -23,15 +23,15 @@ export class ChildComponent implements OnInit, OnChanges {
   }
 
   loadData() {
-    console.log('Child need to be updated');
+   // console.log('Child need to be updated');
   }
 
   ngOnChanges(changes) {
 
 
-    if (changes.childName &&
-      changes.childName.currentValue !== changes.childName.previousValue) {
-      this.loadData();
-    }
+    // if (changes.childName &&
+    //   changes.childName.currentValue !== changes.childName.previousValue) {
+    //   this.loadData();
+    // }
   }
 }

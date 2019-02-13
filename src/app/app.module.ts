@@ -11,6 +11,9 @@ import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
 import { InputComponent } from './input/input.component';
 import { ChildComponent } from './input/child/child.component';
+import { BroComponent } from './input/bro/bro.component';
+import {AppService} from './app.service';
+import { UserbComponent } from './input/userb/userb.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ChildComponent } from './input/child/child.component';
     AboutComponent,
     LoginComponent,
     InputComponent,
-    ChildComponent
+    ChildComponent,
+    BroComponent,
+    UserbComponent
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,9 @@ import { ChildComponent } from './input/child/child.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
