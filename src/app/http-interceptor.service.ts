@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError, retry} from 'rxjs/internal/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class HttpInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (request.url === 'https://jsonplaceholder.typicode.com/users') {
-      return next.handle(request); // do nothing
+      return this.request(next.handle(request)); // do nothing
     } else {
       request = request.clone({
         setHeaders: {
@@ -22,6 +23,28 @@ export class HttpInterceptorService implements HttpInterceptor {
       });
     }
 
-    return next.handle(request);
+    return this.request(next.handle(request));
   }
+
+
+  request(rqt) {
+    return rqt
+      .pipe(
+        retry(1),
+        catchError((error: HttpErrorResponse) => {
+          let errorMessage = '';
+          if (error.error instanceof ErrorEvent) {
+            // client-side error
+            errorMessage = `Error: ${error.error.message}`;
+          } else {
+            // server-side error
+            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+          }
+          window.alert(errorMessage);
+          return throwError(errorMessage);
+        })
+      );
+  }
+
+
 }

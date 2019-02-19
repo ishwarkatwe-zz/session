@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
     this._loginService.auth().subscribe(res => {
       this.loading = false;
       this.response = res;
+    }, err => {
+      this.loading = false;
+      this.response = null;
     });
   }
 
