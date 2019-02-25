@@ -19,6 +19,8 @@ import { MasterComponent } from './master/master.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { HighlightPipe } from './highlight.pipe';
 import { AdvDirective } from './adv.directive';
+import { PostsComponent } from './posts/posts.component';
+import { ArticlesComponent } from './posts/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { AdvDirective } from './adv.directive';
     MasterComponent,
     PipesComponent,
     HighlightPipe,
-    AdvDirective
+    AdvDirective,
+    PostsComponent,
+    ArticlesComponent
 
   ],
   imports: [

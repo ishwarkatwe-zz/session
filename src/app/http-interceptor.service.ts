@@ -18,6 +18,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     } else {
       request = request.clone({
         setHeaders: {
+          'Content-type': 'application/json; charset=utf-8',
           Token: 'Api with auth token'
         }
       });

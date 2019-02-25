@@ -7,10 +7,12 @@ import {InputComponent} from './input/input.component';
 import {MasterComponent} from './master/master.component';
 import {PipesComponent} from './pipes/pipes.component';
 import {AuthGuard} from './auth.guard';
+import {PostsComponent} from './posts/posts.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: 'login', component: LoginComponent},
+  {path: 'posts', component: PostsComponent},
   {path: 'pipe', component: PipesComponent, canActivate: [AuthGuard]},
   {
     path: '', component: MasterComponent, children: [

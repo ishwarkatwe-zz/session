@@ -1,0 +1,5 @@
+<button (click)="onLoad()">Load Data</button>
+<hr />
+<div *ngFor="let item of results" class="well well-sm">
+  <app-articles [list]="item" (selected)="onChoose($event)"></app-articles>
+</div>

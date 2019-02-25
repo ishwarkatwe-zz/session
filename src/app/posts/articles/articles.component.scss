@@ -1,0 +1,11 @@
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+
+  small {
+    font-size: 13px;
+    &:hover{
+      font-size: 18px;
+    }
+  }
+}
